@@ -20,6 +20,7 @@ with col2:
 
 st.write('Below you can find some apps I have built in python. Feel free to contact me!')
 col3, _, col4 = st.columns([1.5, 0.4, 1.5])
+
 with col3:
     for index in range(0, 20, 2):
         st.header(data['title'][index])
