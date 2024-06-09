@@ -1,26 +1,14 @@
 import streamlit as st
-import csv
+import pandas
 
 st.set_page_config(layout='wide')  # Dá para usar no telemóvel
 
 col1, col2 = st.columns(2)
-data: list = []
-
-with open('data.csv', encoding='utf-8') as file:
-    data_read = csv.reader(file)
-    for row in data_read:
-        if row != ['title;description;url;image']:
-            data.append(row[0].split(';'))
-
+data: dict = pandas.read_csv('data.csv', sep=';').to_dict()
 print(data)
 
 with col1:
     st.image('Images/photo.png', width=600)
-    for index in range(0, 20, 2):
-        st.title(data[index][0])
-        st.image(f'Images/{data[index][3]}', width=600)
-        st.write(data[index][1])
-        st.write(data[index][2])
 
 with col2:
     st.title('Ardit Sulce')
@@ -29,8 +17,18 @@ with col2:
             'Python for remote sensing. I have worked with companies from various countries, such as the Center for '
             'Conservation Geography, to map and understand Australian ecosystems, image processing with the Swiss '
             'in-Terra, and perfoming data mining to gain business insights with the Australian Rapid Intelligence.')
+
+st.write('Below you can find some apps I have built in python. Feel free to contact me!')
+col3, _, col4 = st.columns([1.5, 0.4, 1.5])
+with col3:
+    for index in range(0, 20, 2):
+        st.header(data['title'][index])
+        st.image(f'Images/{data['image'][index]}', width=600)
+        st.write(data['description'][index])
+        st.write(f'[Source Code]({data['url'][index]})')
+with col4:
     for index in range(1, 20, 2):
-        st.title(data[index][0])
-        st.image(f'Images/{data[index][3]}', width=600)
-        st.write(data[index][1])
-        st.write(data[index][2])
+        st.header(data['title'][index])
+        st.image(f'Images/{data['image'][index]}', width=600)
+        st.write(data['description'][index])
+        st.write(f'[Source Code]({data['url'][index]})')
