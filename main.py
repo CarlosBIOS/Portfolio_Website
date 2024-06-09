@@ -18,7 +18,7 @@ with col2:
             'Conservation Geography, to map and understand Australian ecosystems, image processing with the Swiss '
             'in-Terra, and perfoming data mining to gain business insights with the Australian Rapid Intelligence.')
 
-st.write('Below you can find some apps I have built in python. Feel free to contact me!')
+st.write('\nBelow you can find some apps I have built in python. Feel free to contact me!')
 col3, _, col4 = st.columns([1.5, 0.4, 1.5])
 
 with col3:
