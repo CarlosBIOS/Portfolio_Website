@@ -8,7 +8,7 @@ data: dict = pandas.read_csv('data.csv', sep=';').to_dict()
 print(data)
 
 with col1:
-    st.image('Images/photo.png', width=600)
+    st.image('Images/photo.png', width=460)
 
 with col2:
     st.title('Ardit Sulce')
