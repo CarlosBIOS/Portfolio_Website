@@ -5,10 +5,9 @@ st.set_page_config(layout='wide')  # Dá para usar no telemóvel
 
 col1, col2 = st.columns(2)
 data: dict = pandas.read_csv('data.csv', sep=';').to_dict()
-print(data)
 
 with col1:
-    st.image('Images/photo.png', width=460)
+    st.image('Images/photo.png', width=480)
 
 with col2:
     st.title('Ardit Sulce')
