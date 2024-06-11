@@ -20,5 +20,5 @@ Subject: Email from the Portfolio Website
 From: {user_email}
 {user_message}
 """
-        send_emails(message)
+        send_emails(message.encode('utf-8'))
         st.info('Your email was succefully send it')

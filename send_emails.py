@@ -18,7 +18,8 @@ def send_emails(message):
     # 2: Carregar no último botão chamado: variáveis de ambiente
     # 3: Carregar no primeiro botão de novo, na seção: variáveis de utilizador para cmmon
     # 4: Preencher na 1 com o nome que dei na variável, ou seja, PASSWORD_PORTFOLIO_WEBSITE, e na outra, a pass!!
-    password: str | None = os.getenv('PASSWORD_PORTFOLIO_WEBSITE')
+    # 5: Restart the pycharm
+    password = os.getenv('PASSWORD_PORTFOLIO_WEBSITE')
     receiver: str = username  # Por exemplo
 
     context = ssl.create_default_context()
